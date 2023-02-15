@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+
+{{-- Laravel ui paketi o'rnatildi composer require laravel/ui komandasi bilan, view fayllarni php artisan ui bootstrap --auth komandasi bilan yaratiladi, stillarni o'rnatish uchun npm install, ishga tushirish uchun npm run dev komandalarini kiritiladi --}}
+
 @section('content')
     
 <h2 class="text-center p-3">Bu Taskilotlar ro'yxati</h2>

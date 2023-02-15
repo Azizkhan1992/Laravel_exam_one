@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome'); //Route orqali qaysi sahifa ko'rishi kerakligini ko'rsatadi
+    return view('home'); //Route orqali qaysi sahifa ko'rishi kerakligini ko'rsatadi
 });
 
 Route::get('/products', [ProductController::class, 'list']);
@@ -38,7 +38,7 @@ Route::get('/members', [HomeController::class, 'members']);
 Route::get('/about', [HomeController::class, 'about']);
 
 // Route::get('/companies', [CompaniesController::class, 'index']);
-Route::resource('companies', CompaniesController::class); //resurs ya'ni manbaga ulangan Controllerga Route ko'rsatish, bunda barcha route larni ko'rish mumkin. Route larni ko'rish uchun php artisan route:list komandasidan foydalaniladi
+Route::resource('companies', CompaniesController::class)->middleware('auth'); //resurs ya'ni manbaga ulangan Controllerga Route ko'rsatish, bunda barcha route larni ko'rish mumkin. Route larni ko'rish uchun php artisan route:list komandasidan foydalaniladi, companiyalar ro'yxatini faqat registratsiyadan o'tgandan keyin ko'rish mumkin bo'lishi uchun middleware dan foydalanildi
 
 Route::get('/hello', function() {
     return view('hello'); //Route orqali qaysi sahifa ko'rishi kerakligini ko'rsatadi
@@ -66,3 +66,6 @@ Route::get('/show/{id?}', ShowProfileController::class); //Bir metodli controlle
 
 
 Route::get('/users', [UserController::class, 'index']);  //Route orqali sahiha(view) va controllerni bog'laydi, view dan controllerga ma'lumot berib yuboradi va qaytarib oladi
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

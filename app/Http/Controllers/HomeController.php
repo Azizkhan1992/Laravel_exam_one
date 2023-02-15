@@ -2,26 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function home(){
-        return view('app');
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
     }
 
-    public function members(){
-
-        $members = [
-            'Eshmatov Toshmat',
-            'John Doe',
-            'Toshmatov Eshmat'
-        ];  // Ba'zadan olingan ma'lumot
-        return view('members', compact('members')); // Bazadan olingan ma'lumotni view ga berib yuborish
-    }
-
-    public function about () {
-        return view('about');
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
+    {
+        return view('home');
     }
 }

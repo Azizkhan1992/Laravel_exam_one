@@ -7,6 +7,10 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+{{-- Laravel ui paketi o'rnatildi composer require laravel/ui komandasi bilan, view fayllarni php artisan ui bootstrap --auth komandasi bilan yaratiladi, stillarni o'rnatish uchun npm install, ishga tushirish uchun npm run dev komandalarini kiritiladi --}}
+
+{{-- Laravel ui package is installed with composer require laravel/ui command, view files are created with php artisan ui bootstrap --auth command, npm install to install styles, npm run dev commands are entered to run --}}
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
